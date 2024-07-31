@@ -3,6 +3,7 @@
 ## Major features and improvements
 * Exposed `load` and `save` publicly for each dataset in the core `kedro` library, and enabled other datasets to do the same. If a dataset doesn't expose `load` or `save` publicly, Kedro will fall back to using `_load` or `_save`, respectively.
 * Kedro commands are now lazily loaded to add performance gains when running Kedro commands.
+* Can use unpacking with parameter dictionaries.
 
 ## Bug fixes and other changes
 * Updated error message for invalid catalog entries.
@@ -25,6 +26,8 @@
 * Extended documentation with an example of logging customisation at runtime
 
 ## Community contributions
+Many thanks to the following Kedroids for contributing PRs to this release:
+* [bpmeek](https://github.com/bpmeek/)
 
 # Release 0.19.6
 
