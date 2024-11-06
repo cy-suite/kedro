@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 import fsspec
+import line_profiler
 from omegaconf import DictConfig, OmegaConf
 from omegaconf.errors import InterpolationResolutionError, UnsupportedInterpolationType
 from omegaconf.resolvers import oc
@@ -269,6 +270,7 @@ class OmegaConfigLoader(AbstractConfigLoader):
         return KeysView(self.config_patterns)
 
     @typing.no_type_check
+    @line_profiler.profile
     def load_and_merge_dir_config(
         self,
         conf_path: str,
